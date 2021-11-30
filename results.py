@@ -80,7 +80,7 @@ def filter_by_bluekeep(hosts):
             if scan['scantype'] == 'bluekeep'\
                 and 'target is vulnerable' in scan['ports'][0]['status']:
                 filtered[key] = hosts[key]
-                #sys.stderr.write(scan['ports'][0]['status'] + '\n')
+                sys.stderr.write(scan['ports'][0]['status'] + '\n')
     return filtered
 
 def filter_by_ms17010(hosts):
@@ -90,7 +90,7 @@ def filter_by_ms17010(hosts):
             if scan['scantype'] == 'ms17_010'\
                  and 'Host is likely VULNERABLE' in scan['ports'][0]['status']:
                 filtered[key] = hosts[key]
-                #sys.stderr.write(scan['ports'][0]['status'] + '\n')
+                sys.stderr.write(scan['ports'][0]['status'] + '\n')
     return filtered
 
 def filter_by_ms12020(hosts):
@@ -100,7 +100,7 @@ def filter_by_ms12020(hosts):
             if scan['scantype'] == 'ms12_020'\
                  and 'vulnerable' in scan['ports'][0]['status'].lower() and 'not' not in scan['ports'][0]['status'].lower(): #yolo might work
                 filtered[key] = hosts[key]
-                #sys.stderr.write(scan['ports'][0]['status'] + '\n')
+                sys.stderr.write(scan['ports'][0]['status'] + '\n')
     return filtered
 
 def filter_by_cve_2021_1675(hosts):
@@ -110,7 +110,7 @@ def filter_by_cve_2021_1675(hosts):
             if scan['scantype'] == 'cve_2021_1675'\
                  and 'target is vulnerable' in scan['ports'][0]['status'].lower():
                 filtered[key] = hosts[key]
-                #sys.stderr.write(scan['ports'][0]['status'] + '\n')
+                sys.stderr.write(scan['ports'][0]['status'] + '\n')
     return filtered
 
 def filter_by_vulns(hosts):
