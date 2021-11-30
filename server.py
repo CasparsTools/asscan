@@ -429,7 +429,7 @@ def forkjobs(jobspec):
             hosts = r.hosts
             hosts = filter_by_network(hosts, target, mask)
             if foundonly:
-                #sys.stderr.write('0: %s\n'%str(list(hosts.keys())))
+                sys.stderr.write('0: %s\n'%str(list(hosts.keys())))
                 hosts = filter_by_port(hosts, port)
                 sys.stderr.write('1: %s\n'%str(list(hosts.keys())))
             hostkeys = list(hosts.keys())
